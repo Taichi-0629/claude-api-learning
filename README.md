@@ -1,4 +1,4 @@
-\# Claude API Learning
+# Claude API Learning
 
 
 
@@ -6,7 +6,7 @@ Claude API(Anthropic API)を基礎から学びながら、実務を想定した�
 
 
 
-\## 学習の流れ
+## 学習の流れ
 
 
 
@@ -26,7 +26,7 @@ Claude API(Anthropic API)を基礎から学びながら、実務を想定した�
 
 
 
-\## inventory\_mcp\_server.py の機能
+## inventory\_mcp\_server.py の機能
 
 
 
@@ -58,7 +58,7 @@ Tool Useではなく、プロンプト設計だけで複雑な制約条件を扱
 
 
 
-\## 使用技術
+## 使用技術
 
 
 
@@ -70,7 +70,7 @@ Tool Useではなく、プロンプト設計だけで複雑な制約条件を扱
 
 
 
-\## 今後の展望
+## 今後の展望
 
 
 
