@@ -86,3 +86,13 @@ Tool Useではなく、プロンプト設計だけで複雑な制約条件を扱
 
 小売業界での実務経験を活かし、業務課題を解決するAIエージェント・MCPサーバーの開発案件獲得を目指しています。
 
+
+
+\## 関連記事
+
+
+
+\- \[Zenn:小売業界の販売職が、Claude APIとMCPサーバーを学んで在庫管理ツールを作ってみた](https://zenn.dev/bluestorm/articles/e64df3f92c2f98)
+
+\- \[Qiita:同内容の記事](https://qiita.com/Taichi-0629/items/68270f2fdd6214e59621)
+
