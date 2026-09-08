@@ -1,4 +1,4 @@
-# Claude API Learning
+\# Claude API Learning
 
 
 
@@ -6,7 +6,7 @@ Claude API(Anthropic API)を基礎から学びながら、実務を想定した�
 
 
 
-## 学習の流れ
+\## 学習の流れ
 
 
 
@@ -22,11 +22,11 @@ Claude API(Anthropic API)を基礎から学びながら、実務を想定した�
 
 | `inventory\_mcp\_server.py` | 上記のツールをMCP(Model Context Protocol)サーバーとして独立させ、外部クライアントから呼び出せる形に発展させたもの |
 
-| `shift_scheduler.py` | プロンプト設計のみで、スタッフの希望シフトと必要人数から調整案を生成するアプリ(Tool Useを使わない生成・推論タスクの例) |
+| `shift\_scheduler.py` | プロンプト設計のみで、スタッフの希望シフトと必要人数から調整案を生成するアプリ(Tool Useを使わない生成・推論タスクの例) |
 
 
 
-## inventory\_mcp\_server.py の機能
+\## inventory\_mcp\_server.py の機能
 
 
 
@@ -46,19 +46,29 @@ Claude API(Anthropic API)を基礎から学びながら、実務を想定した�
 
 \[MCP Inspector](https://github.com/modelcontextprotocol/inspector)を使い、実際にツール呼び出しが正しく動作することを確認済みです。
 
-## shift_scheduler.py の機能
+
+
+\## shift\_scheduler.py の機能
+
+
 
 小売店のシフト調整を想定したミニアプリです。
 
-- 各スタッフの希望勤務曜日と、曜日ごとの必要人数を入力
-- Claudeが制約を踏まえてシフト案を生成
-- 希望が競合する箇所は、理由と代替案(交代提案など)まで提示
-
-Tool Useではなく、プロンプト設計だけで複雑な制約条件を扱う例として、`inventory_mcp_server.py`とは異なるアプローチを示しています。
 
 
+\- 各スタッフの希望勤務曜日と、曜日ごとの必要人数を入力
 
-## 使用技術
+\- Claudeが制約を踏まえてシフト案を生成
+
+\- 希望が競合する箇所は、理由と代替案(交代提案など)まで提示
+
+
+
+Tool Useではなく、プロンプト設計だけで複雑な制約条件を扱う例として、`inventory\_mcp\_server.py`とは異なるアプローチを示しています。
+
+
+
+\## 使用技術
 
 
 
@@ -70,7 +80,7 @@ Tool Useではなく、プロンプト設計だけで複雑な制約条件を扱
 
 
 
-## 今後の展望
+\## 今後の展望
 
 
 
