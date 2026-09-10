@@ -20,9 +20,11 @@ Claude API(Anthropic API)を基礎から学びながら、実務を想定した�
 
 | `inventory\_bot.py` | Tool Use(Function Calling)を使い、在庫データを参照して回答するチャットボット |
 
-| `inventory\_mcp\_server.py` | 上記のツールをMCP(Model Context Protocol)サーバーとして独立させ、外部クライアントから呼び出せる形に発展させたもの 🔗 **[会話形式で使えるWeb版デモはこちら](https://claude-api-learning-kc6fktrnbwlevvq2egqlr3.streamlit.app/)**|
+| `inventory_mcp_server.py` | 上記のツールをMCP(Model Context Protocol)サーバーとして独立させ、外部クライアントから呼び出せる形に発展させたもの |
+🔗 **[会話形式で使えるWeb版デモはこちら](https://claude-api-learning-kc6fktrnbwlevvq2egqlr3.streamlit.app/)**
 
-| `shift\_scheduler.py` | プロンプト設計のみで、スタッフの希望シフトと必要人数から調整案を生成するアプリ(Tool Useを使わない生成・推論タスクの例)🔗 \*\*\[実際に触れるデモはこちら](https://claude-api-learning-mar2t9jxyhmnaqvg8mmcpm.streamlit.app/)\*\*(ブラウザで今すぐ試せます) |
+| `shift_scheduler.py` | プロンプト設計のみで、スタッフの希望シフトと必要人数から調整案を生成するアプリ(Tool Useを使わない生成・推論タスクの例) |
+🔗 **[実際に触れるデモはこちら](https://claude-api-learning-mar2t9jxyhmnaqvg8mmcpm.streamlit.app/)**(ブラウザで今すぐ試せます)
 
 
 
