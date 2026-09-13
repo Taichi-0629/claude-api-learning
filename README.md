@@ -25,6 +25,7 @@ Claude API(Anthropic API)を基礎から学びながら、実務を想定した�
 
 | `shift_scheduler.py` | プロンプト設計のみで、スタッフの希望シフトと必要人数から調整案を生成するアプリ(Tool Useを使わない生成・推論タスクの例) |
 🔗 **[実際に触れるデモはこちら](https://claude-api-learning-mar2t9jxyhmnaqvg8mmcpm.streamlit.app/)**(ブラウザで今すぐ試せます)
+| `article_draft_assistant.py` | Web検索(server tool)を使い、テーマの検索ニーズ・競合記事の傾向をリサーチした上で、記事構成案・導入文の下書きを生成するアプリ |
 
 
 
@@ -79,6 +80,16 @@ Tool Useではなく、プロンプト設計だけで複雑な制約条件を扱
 \- Anthropic SDK (`anthropic`)
 
 \- Model Context Protocol (`mcp`)
+
+
+
+## article_draft_assistant.py の機能
+
+記事執筆(特にBuddyプログラムでの飲食店向け記事執筆)を支援するアプリです。
+
+- テーマ・キーワードを入力すると、Web検索(server tool)でそのテーマの検索ニーズと競合上位記事の傾向を自動リサーチ
+- リサーチ結果をもとに、記事構成案と導入文の下書きを生成
+- これまでの自作ツール(Tool Use)と異なり、Anthropic側が検索の実行自体を代行する仕組みを採用
 
 
 
