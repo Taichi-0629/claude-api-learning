@@ -1,6 +1,6 @@
-import os
 import streamlit as st
 import anthropic
+import os
 
 try:
     api_key = st.secrets["ANTHROPIC_API_KEY"]
@@ -16,13 +16,19 @@ days = ["月", "火", "水", "木", "金", "土", "日"]
 
 st.subheader("スタッフの希望勤務曜日")
 
+num_staff = st.number_input("スタッフ人数", min_value=1, max_value=15, value=3)
+
 staff_requests = {}
-for i in range(1, 4):
-    col1, col2 = st.columns([1, 3])
-    with col1:
-        name = st.text_input(f"スタッフ{i}の名前", value=f"スタッフ{i}", key=f"name_{i}")
-    with col2:
-        selected_days = st.multiselect(f"{name}の希望曜日", days, key=f"days_{i}")
+for i in range(1, num_staff + 1):
+    name = st.text_input(f"スタッフ{i}の名前", value=f"スタッフ{i}", key=f"name_{i}")
+    st.write(f"{name}の希望曜日")
+    day_cols = st.columns(7)
+    selected_days = []
+    for j, day in enumerate(days):
+        with day_cols[j]:
+            if st.checkbox(day, key=f"day_{i}_{day}"):
+                selected_days.append(day)
+    st.divider()
     if name and selected_days:
         staff_requests[name] = selected_days
 
