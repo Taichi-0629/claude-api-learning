@@ -116,22 +116,39 @@ st.write("仕入れや使った分を、品目と数量を選ぶだけで記録�
 st.subheader("在庫を増やす・減らす")
 with st.form("update_form", clear_on_submit=True):
     item = st.selectbox(
-        "品目（一覧から選ぶか、新しい品目名を入力）",
+        "品目（一覧から選ぶ。文字を打つと絞り込めます）",
         options=sorted(inventory_data.keys()),
         index=None,
         placeholder="例：豆腐",
-        accept_new_options=True,
     )
+    new_item = st.text_input("一覧にない品目を新しく登録する場合は、ここに品目名を入力", placeholder="例：キャベツ")
     action = st.radio("どちらにしますか", ["追加（仕入れ）", "減らす（使った・廃棄）"], horizontal=True)
     qty = st.number_input("数量", min_value=1, value=1, step=1)
     submitted = st.form_submit_button("反映する")
 
+
+def check_new_item(name: str):
+    """新しい品目名を確かめる。問題があれば理由の文を返す。"""
+    if name in inventory_data:
+        return None
+    similar = [existing for existing in inventory_data if existing.startswith(name)]
+    if similar:
+        return f"「{name}」は、すでにある「{similar[0]}」の書きかけかもしれません。一覧から選ぶか、品目名を最後まで入力してください。"
+    return None
+
+
 if submitted:
-    if not item:
-        st.warning("品目を選ぶか、入力してください。")
+    new_item = new_item.strip()
+    if item and new_item:
+        st.warning("一覧から選ぶか、新しい品目名を入力するか、どちらか1つにしてください。")
+    elif not item and not new_item:
+        st.warning("品目を一覧から選ぶか、新しい品目名を入力してください。")
+    elif new_item and check_new_item(new_item):
+        st.warning(check_new_item(new_item))
     else:
+        target = item or new_item
         change = int(qty) if action.startswith("追加") else -int(qty)
-        result = update_stock(item, change)
+        result = update_stock(target, change)
         st.session_state.last_result = result
         st.rerun()
 
